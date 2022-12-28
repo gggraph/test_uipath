@@ -1,0 +1,458 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PDF_part_extraction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>943,2116</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="66">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="57">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PDF_part_extraction" sap:VirtualizedContainerService.HintSize="654,2051" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="InvoiceNumber" />
+      <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
+      <Variable x:TypeArguments="x:String" Name="InvoiceTotal" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Invoice-722018.pdf - Adobe Acrobat Reader (32-bit)" sap:VirtualizedContainerService.HintSize="592,1795" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="370cdf0c-5684-47bb-98d3-5be9abe2f7bc" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="558,1495" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Get PDF value" sap:VirtualizedContainerService.HintSize="496,1372" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="955db508-6473-4994-88c2-a22470763306" DisplayName="CV Screen Scope 'AVL_AVView'" sap:VirtualizedContainerService.HintSize="434,1248" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V5">
+                <p:CVScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Faire" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,889" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="955db508-6473-4994-88c2-a22470763306" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Tout groupe de mots" sap:VirtualizedContainerService.HintSize="338,229" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="bdbb606f74278ca0ccd9f168b30aa65c" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
+                          <p:CvGetTextWithDescriptor.Descriptor>
+                            <InArgument x:TypeArguments="uc:CvDescriptor">
+                              <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2" xml:space="preserve">"Target: AnyWordGroup (666,49,74,19)" +
+"Anchor: Text 'Invoice No.' (546,50,115,19)"</CSharpValue>
+                            </InArgument>
+                          </p:CvGetTextWithDescriptor.Descriptor>
+                          <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                            <uc:CvDescriptor Id="e26469b5-1175-4bb4-9c6e-dd8ab0f691bf">
+                              <uc:CvDescriptor.Anchors>
+                                <x:Array Type="uc:CvElementDescriptor">
+                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="546, 50, 115, 19" ElementType="Text" Text="Invoice No." />
+                                </x:Array>
+                              </uc:CvDescriptor.Anchors>
+                              <uc:CvDescriptor.Target>
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="666, 49, 74, 19" ElementType="AnyWordGroup" />
+                              </uc:CvDescriptor.Target>
+                            </uc:CvDescriptor>
+                          </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                          <p:CvGetTextWithDescriptor.Result>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">InvoiceNumber</CSharpReference>
+                            </OutArgument>
+                          </p:CvGetTextWithDescriptor.Result>
+                        </p:CvGetTextWithDescriptor>
+                        <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="955db508-6473-4994-88c2-a22470763306" DesignTimeScaleFactor="1" DisplayName="CV Get Text - N'importe quel texte" sap:VirtualizedContainerService.HintSize="338,229" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="fb709753def71185f438f1d24d0ae8b5" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
+                          <p:CvGetTextWithDescriptor.Descriptor>
+                            <InArgument x:TypeArguments="uc:CvDescriptor">
+                              <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3" xml:space="preserve">"Target: AnyText (586,74,78,14)" +
+"Anchor: Text 'Date:' (545,74,38,14)"</CSharpValue>
+                            </InArgument>
+                          </p:CvGetTextWithDescriptor.Descriptor>
+                          <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                            <uc:CvDescriptor Id="db471a28-10a2-4cbc-a65c-bba5c8b3ab23">
+                              <uc:CvDescriptor.Anchors>
+                                <x:Array Type="uc:CvElementDescriptor">
+                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="545, 74, 38, 14" ElementType="Text" Text="Date:" />
+                                </x:Array>
+                              </uc:CvDescriptor.Anchors>
+                              <uc:CvDescriptor.Target>
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="586, 74, 78, 14" ElementType="AnyText" />
+                              </uc:CvDescriptor.Target>
+                            </uc:CvDescriptor>
+                          </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                          <p:CvGetTextWithDescriptor.Result>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">InvoiceDate</CSharpReference>
+                            </OutArgument>
+                          </p:CvGetTextWithDescriptor.Result>
+                        </p:CvGetTextWithDescriptor>
+                        <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="955db508-6473-4994-88c2-a22470763306" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Tout groupe de mots" sap:VirtualizedContainerService.HintSize="338,229" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="fc8bd7e353aac17f0bbc53b218642ff8" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
+                          <p:CvGetTextWithDescriptor.Descriptor>
+                            <InArgument x:TypeArguments="uc:CvDescriptor">
+                              <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4" xml:space="preserve">"Target: AnyWordGroup (992,714,77,13)" +
+"Anchor: Text 'Total:' (956,714,35,13)"</CSharpValue>
+                            </InArgument>
+                          </p:CvGetTextWithDescriptor.Descriptor>
+                          <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                            <uc:CvDescriptor Id="371b3494-8914-4024-bd88-830afcc96e4b">
+                              <uc:CvDescriptor.Anchors>
+                                <x:Array Type="uc:CvElementDescriptor">
+                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="956, 714, 35, 13" ElementType="Text" Text="Total:" />
+                                </x:Array>
+                              </uc:CvDescriptor.Anchors>
+                              <uc:CvDescriptor.Target>
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="992, 714, 77, 13" ElementType="AnyWordGroup" />
+                              </uc:CvDescriptor.Target>
+                            </uc:CvDescriptor>
+                          </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                          <p:CvGetTextWithDescriptor.Result>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">InvoiceTotal</CSharpReference>
+                            </OutArgument>
+                          </p:CvGetTextWithDescriptor.Result>
+                        </p:CvGetTextWithDescriptor>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </p:CVScope.Body>
+                <p:CVScope.DesignTimeCacheContainer>
+                  <uc:CvCacheContainer>
+                    <uc:CvCacheContainer.Caches>
+                      <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                        <uc:CVCache DataSent="False" DisplayName="Écran CV Get Text - '' (Principal)" Id="955db508-6473-4994-88c2-a22470763306" InformativeScreenshot="983106e47851f5518eed2df684d98ef5" LogicalPosition="1938, 127" OcrText="Invoice No. 722018 Aleea Rozelor 84 Date: 0000-00-00 lasi, Romania Vendor: Star Software Client Name ACME Systems Inc. Somewhere Road 59, Bucharest, Romania Notes Invoices must be paid within 20 days starting with the issue date. Item Description Quantity Price Per Total Various paper supplies 1 213560 EUR 213560 EUR Subtotal: 177967 EUR Tax: 35593.4 EUR Total: 213560 EUR" Position="1938, 127" ScreenshotGuid="6c5ce8bd-77b3-49e5-8017-3ebd836c7971" ServerVersion="1">
+                          <uc:CVCache.CvAnchorRelations>
+                            <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                              <uc:AnchorRelationInfo IsTargetText="True" Target="5">
+                                <uc:AnchorRelationInfo.Anchors>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>3</x:Int32>
+                                    <x:Int32>4</x:Int32>
+                                    <x:Int32>5</x:Int32>
+                                  </x:Array>
+                                </uc:AnchorRelationInfo.Anchors>
+                              </uc:AnchorRelationInfo>
+                              <uc:AnchorRelationInfo IsTargetText="True" Target="2">
+                                <uc:AnchorRelationInfo.Anchors>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>0</x:Int32>
+                                    <x:Int32>1</x:Int32>
+                                  </x:Array>
+                                </uc:AnchorRelationInfo.Anchors>
+                              </uc:AnchorRelationInfo>
+                              <uc:AnchorRelationInfo IsTargetText="True" Target="7">
+                                <uc:AnchorRelationInfo.Anchors>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>6</x:Int32>
+                                  </x:Array>
+                                </uc:AnchorRelationInfo.Anchors>
+                              </uc:AnchorRelationInfo>
+                            </scg:List>
+                          </uc:CVCache.CvAnchorRelations>
+                          <uc:CVCache.CvTables>
+                            <x:Array Type="uc:CvTableInfo">
+                              <uc:CvTableInfo>
+                                <uc:CvTableInfo.Columns>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>545</x:Int32>
+                                    <x:Int32>821</x:Int32>
+                                    <x:Int32>911</x:Int32>
+                                    <x:Int32>1006</x:Int32>
+                                    <x:Int32>1125</x:Int32>
+                                    <x:Int32>1129</x:Int32>
+                                  </x:Array>
+                                </uc:CvTableInfo.Columns>
+                                <uc:CvTableInfo.Rows>
+                                  <x:Array Type="x:Int32">
+                                    <x:Int32>366</x:Int32>
+                                    <x:Int32>401</x:Int32>
+                                    <x:Int32>434</x:Int32>
+                                    <x:Int32>468</x:Int32>
+                                    <x:Int32>502</x:Int32>
+                                    <x:Int32>535</x:Int32>
+                                    <x:Int32>569</x:Int32>
+                                    <x:Int32>602</x:Int32>
+                                    <x:Int32>637</x:Int32>
+                                  </x:Array>
+                                </uc:CvTableInfo.Rows>
+                              </uc:CvTableInfo>
+                            </x:Array>
+                          </uc:CVCache.CvTables>
+                          <uc:CVCache.CvUiElements>
+                            <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                              <uc:CvElementInfo Category="Cell" Region="1006, 401, 119, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 401, 95, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 401, 276, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 401, 90, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 468, 276, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 366, 119, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 366, 276, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 468, 119, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 366, 95, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 569, 119, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 434, 276, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 502, 119, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 535, 119, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 434, 119, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 468, 95, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 434, 90, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 366, 90, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 468, 90, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 569, 95, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 602, 276, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 602, 90, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 535, 95, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 502, 90, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 535, 276, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 502, 95, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 602, 95, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="911, 434, 95, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="1006, 602, 119, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 569, 90, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 502, 276, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="821, 535, 90, 34" />
+                              <uc:CvElementInfo Category="Cell" Region="945, 701, 177, 35" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 569, 276, 33" />
+                              <uc:CvElementInfo Category="Cell" Region="545, 700, 397, 36" />
+                              <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="533, 274, 585, 33" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="949, 673, 175, 29" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="822, 635, 90, 69" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="541, 646, 381, 56" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="548, 674, 386, 30" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="805, 154, 50, 101" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="933, 654, 198, 44" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="499, 4, 39, 40" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="751, 155, 180, 103" />
+                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="545, 182, 435, 22" />
+                            </scg:List>
+                          </uc:CVCache.CvUiElements>
+                          <uc:CVCache.OcrTexts>
+                            <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="59">
+                              <uc:OcrTextInfo Region="546, 50, 75, 19" Text="Invoice" />
+                              <uc:OcrTextInfo Region="626, 50, 35, 19" Text="No." />
+                              <uc:OcrTextInfo Region="666, 49, 74, 19" Text="722018" />
+                              <uc:OcrTextInfo Region="925, 53, 36, 13" Text="Aleea" />
+                              <uc:OcrTextInfo Region="963, 53, 48, 13" Text="Rozelor" />
+                              <uc:OcrTextInfo Region="1011, 53, 17, 13" Text="84" />
+                              <uc:OcrTextInfo Region="545, 74, 38, 14" Text="Date:" />
+                              <uc:OcrTextInfo Region="586, 74, 78, 14" Text="0000-00-00" />
+                              <uc:OcrTextInfo Region="927, 68, 24, 15" Text="lasi," />
+                              <uc:OcrTextInfo Region="988, 68, 53, 13" Text="Romania" />
+                              <uc:OcrTextInfo Region="545, 92, 54, 14" Text="Vendor:" />
+                              <uc:OcrTextInfo Region="602, 92, 31, 14" Text="Star" />
+                              <uc:OcrTextInfo Region="634, 92, 61, 14" Text="Software" />
+                              <uc:OcrTextInfo Region="555, 167, 35, 12" Text="Client" />
+                              <uc:OcrTextInfo Region="591, 167, 33, 12" Text="Name" />
+                              <uc:OcrTextInfo Region="554, 188, 36, 12" Text="ACME" />
+                              <uc:OcrTextInfo Region="592, 188, 47, 14" Text="Systems" />
+                              <uc:OcrTextInfo Region="641, 188, 20, 12" Text="Inc." />
+                              <uc:OcrTextInfo Region="555, 208, 64, 12" Text="Somewhere" />
+                              <uc:OcrTextInfo Region="621, 208, 30, 12" Text="Road" />
+                              <uc:OcrTextInfo Region="652, 208, 18, 13" Text="59," />
+                              <uc:OcrTextInfo Region="555, 228, 57, 13" Text="Bucharest," />
+                              <uc:OcrTextInfo Region="614, 228, 49, 12" Text="Romania" />
+                              <uc:OcrTextInfo Region="535, 280, 34, 14" Text="Notes" />
+                              <uc:OcrTextInfo Region="536, 327, 48, 13" Text="Invoices" />
+                              <uc:OcrTextInfo Region="586, 328, 30, 12" Text="must" />
+                              <uc:OcrTextInfo Region="618, 327, 16, 13" Text="be" />
+                              <uc:OcrTextInfo Region="636, 327, 26, 15" Text="paid" />
+                              <uc:OcrTextInfo Region="664, 327, 34, 13" Text="within" />
+                              <uc:OcrTextInfo Region="700, 327, 16, 13" Text="20" />
+                              <uc:OcrTextInfo Region="718, 327, 29, 16" Text="days" />
+                              <uc:OcrTextInfo Region="749, 327, 44, 16" Text="starting" />
+                              <uc:OcrTextInfo Region="794, 327, 25, 13" Text="with" />
+                              <uc:OcrTextInfo Region="821, 327, 20, 13" Text="the" />
+                              <uc:OcrTextInfo Region="843, 328, 31, 12" Text="issue" />
+                              <uc:OcrTextInfo Region="877, 327, 29, 13" Text="date." />
+                              <uc:OcrTextInfo Region="552, 382, 27, 13" Text="Item" />
+                              <uc:OcrTextInfo Region="580, 382, 66, 16" Text="Description" />
+                              <uc:OcrTextInfo Region="835, 382, 50, 16" Text="Quantity" />
+                              <uc:OcrTextInfo Region="920, 382, 31, 13" Text="Price" />
+                              <uc:OcrTextInfo Region="953, 382, 23, 13" Text="Per" />
+                              <uc:OcrTextInfo Region="1011, 382, 31, 13" Text="Total" />
+                              <uc:OcrTextInfo Region="551, 412, 46, 13" Text="Various" />
+                              <uc:OcrTextInfo Region="599, 415, 35, 13" Text="paper" />
+                              <uc:OcrTextInfo Region="635, 412, 50, 16" Text="supplies" />
+                              <uc:OcrTextInfo Region="860, 412, 7, 13" Text="1" />
+                              <uc:OcrTextInfo Region="919, 412, 46, 13" Text="213560" />
+                              <uc:OcrTextInfo Region="967, 412, 29, 13" Text="EUR" />
+                              <uc:OcrTextInfo Region="1017, 412, 46, 13" Text="213560" />
+                              <uc:OcrTextInfo Region="1064, 412, 30, 13" Text="EUR" />
+                              <uc:OcrTextInfo Region="957, 647, 52, 13" Text="Subtotal:" />
+                              <uc:OcrTextInfo Region="1012, 647, 44, 13" Text="177967" />
+                              <uc:OcrTextInfo Region="1058, 647, 29, 13" Text="EUR" />
+                              <uc:OcrTextInfo Region="956, 681, 27, 13" Text="Tax:" />
+                              <uc:OcrTextInfo Region="985, 681, 49, 13" Text="35593.4" />
+                              <uc:OcrTextInfo Region="1036, 681, 29, 13" Text="EUR" />
+                              <uc:OcrTextInfo Region="956, 714, 35, 13" Text="Total:" />
+                              <uc:OcrTextInfo Region="992, 714, 45, 13" Text="213560" />
+                              <uc:OcrTextInfo Region="1040, 714, 29, 13" Text="EUR" />
+                            </scg:List>
+                          </uc:CVCache.OcrTexts>
+                        </uc:CVCache>
+                      </scg:List>
+                    </uc:CvCacheContainer.Caches>
+                  </uc:CvCacheContainer>
+                </p:CVScope.DesignTimeCacheContainer>
+                <p:CVScope.OCREngine>
+                  <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                    <ActivityFunc.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                    </ActivityFunc.Argument>
+                    <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,32" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Language="en" Profile="Screen" Scale="1" Timeout="100000">
+                      <p1:UiPathScreenOCR.Image>
+                        <InArgument x:TypeArguments="sd:Image">
+                          <CSharpValue x:TypeArguments="sd:Image" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Image</CSharpValue>
+                        </InArgument>
+                      </p1:UiPathScreenOCR.Image>
+                    </p1:UiPathScreenOCR>
+                  </ActivityFunc>
+                </p:CVScope.OCREngine>
+                <p:CVScope.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="629bce22-d092-45bc-881d-245286881e71" InformativeScreenshot="bf6e01103000f773f09fc59d4d0c59a1" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Invoice-722018.pdf - Adobe Acrobat Reader (32-bit)' /&gt;&lt;wnd cls='AVL_AVView' title='AVTabsContainerView' /&gt;&lt;wnd cls='AVL_AVView' title='AVDocumentMainView' /&gt;&lt;wnd cls='AVL_AVView' idx='2' title='AVFlipContainerView' /&gt;&lt;wnd cls='AVL_AVView' title='AVSplitterView' /&gt;&lt;wnd cls='AVL_AVView' title='AVSplitationPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVSplitterView' /&gt;&lt;wnd cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVScrollView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" WaitForReady="INTERACTIVE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </p:CVScope.Target>
+                <p:CVScope.UseLocalServer>
+                  <InArgument x:TypeArguments="x:Boolean" />
+                </p:CVScope.UseLocalServer>
+              </p:CVScope>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1912, -8, 1936, 1048" FilePath="C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\acrord32.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJPSURBVFhH1ZY9aBRBFMevUVCUKIliOPHjEPzIkTRiOAWxSBobLawU7MQ2aBdFBBHkIHiFVjYhcGijyNkIKS5dIHCQSs6rQgq90mZvd7Z5vv9bNu7ODHGyN5xY/Jh9b96895+Zt8uWiOifYjjisdIRZo2hIdhiFvTcNgwHL1yLz45vD1a/UhAEe+fnD4oWH/2KJ/YFkos3pNfIYjh4AYUfP9iT74HBxjrFE/sHnG9zNxGGAwJsCYvgIsJw+BQA/iYiZwBXAdHrV0nDTR6k4HvXGpOSiJCeeK7XyxnAVYCaqVD4fkVERIuPrTFZwjdL2xy7pdfLGcBVQDx1SkZ15RKp+3eMeQN+O5Bbr5czgPMJzNcobNQlKU7CFqPjVUD47i3FJw6QOnfcOm/DqwA0HmJdmjDFqwA0nrp7m9TVaVK35qwxOl4FqDPjcvdhe5Xi8iFS5yelMePyYSmk5rhHvnzKrfEiIHr5TJLL/d+8TqpyLCl48eSfq+BRTma6kls7lAB8eNTpo0nR2SlS12bkGvAm4BSihYeJKBRm0BvqxuVcjsIC5K65MHYWvXiadL6t8TCP3nhwTwTr84UFwBc94cT8wcEzXkE9xoXCAnAC8GPntp25UliAL/5/AdVqVajX6zt2rVajVqtlzNnwIqDf78uY2r1eT0Skvt3wIgAFswLSMQWnkV2TxYsA7LbZbO7YnU5ntCeg2yjebrdHI2BYnAXgJ9KWYBjkx9RRwGd1odwddL9ZExUBuZCTcy/r9XJGCgc2oNYzDVstwzFqrM7RQaXfNljUiwb3UnIAAAAASUVORK5CYII=" InformativeScreenshot="3a04224187a8b50f4c56fe60ca90e0a4.png" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Invoice-722018.pdf - Adobe Acrobat Reader (32-bit)' /&gt;">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_FilePath</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Arguments>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="592,94" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+      <ui:MessageBox.Text>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">InvoiceNumber + " " + InvoiceTotal + " " + InvoiceDate</CSharpValue>
+        </InArgument>
+      </ui:MessageBox.Text>
+    </ui:MessageBox>
+  </Sequence>
+</Activity>
